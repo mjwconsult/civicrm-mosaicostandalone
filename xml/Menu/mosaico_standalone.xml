@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/mosaicostandalone/editor</path>
+    <page_callback>CRM_MosaicoStandalone_Page_Editor</page_callback>
+    <title>Integration with Mosaico</title>
+    <access_arguments>access CiviMail;create mailings;edit message templates</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/mosaicostandalone/editoriframe</path>
+    <page_callback>CRM_MosaicoStandalone_Page_EditorIframe</page_callback>
+    <title>Integration with Mosaico</title>
+    <access_arguments>access CiviMail;create mailings;edit message templates</access_arguments>
+  </item>
+</menu>
