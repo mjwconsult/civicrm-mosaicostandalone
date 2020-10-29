@@ -76,6 +76,14 @@ class CRM_MosaicoStandalone_Page_Editor extends CRM_Mosaico_Page_Editor {
       $template = CRM_Utils_Request::retrieveValue('template', 'String', NULL);
       $config['mosaicoTemplateName'] = $template;
       $config['mosaicoTemplatePath'] = CRM_Mosaico_Utils::getTemplatesUrl('absolute', "{$config['mosaicoTemplateName']}/template-{$config['mosaicoTemplateName']}.html");
+      //check for custom template directory
+      $customTemplatesDir = Civi::paths()->getPath(Civi::settings()->get('mosaico_custom_templates_dir'));
+      $customTemplatesUrl = Civi::paths()->getUrl(Civi::settings()->get('mosaico_custom_templates_url'));
+      if (!is_null($customTemplatesDir) && !is_null($customTemplatesUrl)) {
+        if (is_dir($customTemplatesDir)) {
+          $config['mosaicoTemplatePath'] = $customTemplatesUrl . "/{$config['mosaicoTemplateName']}/template-{$config['mosaicoTemplateName']}.html";
+        }
+      }
     }
     return $config;
   }
