@@ -38,6 +38,7 @@
         }
         var savePromise = CRM.api3('Mailing', 'create', saveParams).done(function(result) {
           config.mosaicoMailingID = result.id;
+          CRM.status('Saved!);
           console.log('saved (' + result.id + ')');
         });
       }
