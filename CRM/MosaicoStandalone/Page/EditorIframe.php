@@ -24,7 +24,7 @@ class CRM_MosaicoStandalone_Page_EditorIframe extends CRM_Core_Page {
     }
 
     $smarty = CRM_Core_Smarty::singleton();
-    $smarty->assign('mosaicoEditorIframe', CRM_Utils_System::url('civicrm/mosaicostandalone/editor', $editorURLParams, TRUE));
+    $smarty->assign('mosaicoEditorIframe', CRM_Utils_System::url('civicrm/mosaicostandalone/editor', $editorURLParams, TRUE, NULL, FALSE));
     parent::run();
   }
 
